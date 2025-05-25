@@ -1,0 +1,40 @@
+<!-- This tells the browser the document is in HTML5 -->
+<!DOCTYPE html>
+
+<!-- The HTML document starts here and is in English -->
+<html lang="en">
+
+<head>
+    <!-- Sets the character encoding so special characters display correctly -->
+    <meta charset="UTF-8">
+
+    <!-- Makes the website look good on all screen sizes, especially mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- The title of the page (appears in browser tab) -->
+    <title>{{ title }} Weather</title>
+
+    <!-- Link to the CSS file to style the page.
+         `url_for()` is a Flask function that finds the correct path to the file.
+         This line tells the browser to load the CSS from: static/styles/styles.css -->
+    <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Main heading of the page, shown at the top -->
+    <h1>{{ title }} Weather</h1>
+
+    <p>{{ status }} and {{ temp }} &deg;C</p>
+    <p>Feels like {{ feels_like }} &deg;C</p>
+
+    <!-- Shows the form again to let user try another city -->
+    <form action="/weather">
+        <!-- Text box where the user can type a city name -->
+        <input type="text" name="city" id="city" placeholder="Enter a City" />
+
+        <!-- Button that submits the form -->
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html>
