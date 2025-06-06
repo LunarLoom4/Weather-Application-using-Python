@@ -1,3 +1,5 @@
+Can be accessed through this link: "https://weather-application-using-python.onrender.com"
+
 START SERVER  -->  Visit http://localhost:8000  -->  Flask handles '/'
                                              |
                                              v
